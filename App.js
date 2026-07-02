@@ -1,11 +1,10 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import ComponentePicker from './src/Componentes/ComponentePicker';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <ComponentePicker />
     </View>
   );
 }
@@ -13,8 +12,35 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });
+  
+
+
+
+//   const lista = [
+//     {id:"1", nome:"Raquel", email:"raquel@gmail"},
+//     {id:"2", nome:"Ana", email:"Ana@gmail"},
+//     {id:"3", nome:"Ezequiel", email:"Ezequiel@gmail"}
+//   ]
+
+//   return (
+    
+//     <View style={styles.container}>
+//      <FlatList 
+//      data={lista}
+//      renderItem={({ item }) => <Pessoa data={item} />}
+//       />
+//      </View>
+//   );
+// }
+// function Pessoa({data}){
+//   return(
+//     <View>
+     
+//       <Text>id:{data.id}</Text>
+//       <Text>nome:{data.nome}</Text>
+//       <Text>email:{data.email}</Text>
+//     </View>
+//   )
+
