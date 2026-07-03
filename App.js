@@ -1,10 +1,22 @@
 import { StyleSheet, View } from 'react-native';
 import ComponentePicker from './src/Componentes/ComponentePicker';
+import Home from './src/Componentes/Pages/Home/Home';
+import Sobre from './src/Componentes/Pages/Home/Sobre';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
+const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <View style={styles.container}>
-      <ComponentePicker />
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="Home" component={Home}/>
+          <Stack.Screen name="Sobre" component={Sobre}/>
+        </Stack.Navigator>
+      </NavigationContainer>
+
+   
     </View>
   );
 }

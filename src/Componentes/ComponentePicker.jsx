@@ -27,7 +27,7 @@ export default function ComponentePicker(){
             <Text>Menu de Pizzas</Text>
           <Picker selectedValue={sabor} onValueChange={(itemValor, ) => setSabor(itemValor)} >
             
-        <Picker.Item  label="Escolha uma pizza" value=""/>
+    
 
          {pizzas.map((pizza) =>(
          <Picker.Item
@@ -45,7 +45,7 @@ export default function ComponentePicker(){
          )}
           <Text>
             {sabor === "" ? "Não foi encontrado":
-            `Seu valor é ${sabor}`}
+            ` ${sabor}`}
           </Text>
         </View>
     );
