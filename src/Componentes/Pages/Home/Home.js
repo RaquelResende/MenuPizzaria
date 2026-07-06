@@ -77,6 +77,11 @@ const style = StyleSheet.create({
     color:"#990707",
     fontSize:50,
     margin:90,
+    borderColor: "#990707",
+    borderWidth:2,
+    borderRadius:12,
+    alignItems:"center",
+    paddingHorizontal:80,
   },
 
   imagem: {

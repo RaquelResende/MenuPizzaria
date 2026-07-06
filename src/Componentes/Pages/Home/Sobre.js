@@ -12,6 +12,9 @@ export default function Sobre() {
     <TouchableOpacity onPress={() => navigation.navigate("Home")}>
       <Text >Volta para Home</Text>  
     </TouchableOpacity>
+
+     <Text style={styles.titulo} >Sobre</Text>
+
     </View>
   );
 }
@@ -19,6 +22,24 @@ export default function Sobre() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+       flex: 1,
+     paddingTop:40,
+        alignItems: "center",
+        backgroundColor:"#000",
   },
-});
+  titulo:{
+
+    color:"#990707",
+    fontSize:50,
+    borderColor: "#990707",
+    borderRadius:10,
+    borderCurve:5,
+    paddingHorizontal:50,
+    borderWidth:2,
+
+    
+
+  }
+  }
+);
   
