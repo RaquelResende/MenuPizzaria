@@ -1,12 +1,13 @@
-import {View} from "react-native";
+import {View, ScrollView, Text, TouchableOpacity, TextInput} from "react-native";
 import AsyncStorage  from "@react-native-async-storage/async-storage"
 import { useState } from "react";
+
 
 export default function ComponenteStorage(){
     const [nome, setNome]= useState("");
     const [idade, setIdade] = useState("");
     const [cidade, setCidade] = useState(""); 
-    const [usuarios, setUsuario] = useState("");
+    const [usuarios, setUsuario] = useState([]);
 
     async function SalvarNovoUsuario (){
         // objeto 
@@ -29,7 +30,8 @@ export default function ComponenteStorage(){
             "usuarios",
             JSON.stringify(lista)
         );
- 
+        setUsuario(lista);
+        
         setNome("");
         setIdade("");
         setCidade("");
@@ -44,7 +46,7 @@ export default function ComponenteStorage(){
     async function ResgatarUsuario() {
         try{
             const dados = await
-            AsyncStorage.getItem("usuario");
+            AsyncStorage.getItem("usuarios");
              
             if(dados !== null){
                 setUsuario(JSON.parse(dados));
@@ -54,7 +56,7 @@ export default function ComponenteStorage(){
             }
         
         
-        } catch(Error){
+        } catch(error){
         console.log("Erro",error)
     
          }
@@ -68,12 +70,12 @@ export default function ComponenteStorage(){
 
        await AsyncStorage.setItem(
         "usuarios",
-        JSON.toString(novaLista)
+       JSON.stringify(novaLista)
        );
 
         setUsuario(novaLista)
 
-        }catch(Error){
+        }catch(error){
             console.log("Erro",error)
         }
     }
@@ -81,8 +83,41 @@ export default function ComponenteStorage(){
     
     
     return(
+
         <View>
         
+       <ScrollView> 
+       <Text>
+        Cadastro do usuari 
+       </Text>
+       <TextInput 
+        placeholder="Nome"
+        value={nome}
+        onChangeText={setNome}
+        />
+
+        <TextInput 
+        placeholder="Idade"
+        keyboardType="numeric"
+        value={idade}
+        onChangeText={setIdade}
+        />
+        <TextInput 
+        placeholder="cidade"
+        value={cidade}
+        onChangeText={setCidade}
+        />
+
+        <TouchableOpacity onPress={SalvarNovoUsuario}>
+         <Text>Salvar o Usuario</Text>
+        </TouchableOpacity>
+    
+    
+
+       </ScrollView>
+
         </View>
+
+ 
     )
 }

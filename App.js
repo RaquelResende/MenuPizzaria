@@ -3,10 +3,12 @@ import ComponentePicker from './src/Componentes/ComponentePicker';
 import Home from './src/Componentes/Pages/Home/Home';
 import Sobre from './src/Componentes/Pages/Home/Sobre';
 import { NavigationContainer } from '@react-navigation/native';
+import Storage from './src/Componentes/Pages/Home/Storage';
 import Contato from './src/Componentes/Pages/Home/Contato'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Feather } from '@expo/vector-icons';
+import ComponenteStorage from './src/Componentes/ComponenteStorage';
 
 const Tab = createBottomTabNavigator();
 export default function App() {
@@ -37,12 +39,20 @@ export default function App() {
           component={Contato}
           options={{
             tabBarIcon:({color, size}) => {
-              return <Feather name= "phone" color={color} size={size}/>
+              return <Feather name = "phone" color={color} size={size}/>
             }
           }}
-          
 
           />
+
+          <Tab.Screen 
+          name='Storage'
+          component={ComponenteStorage}
+          options={{
+            tabBarIcon:({color, size}) => {
+              return <Feather name="key" color={color} size={size}/>
+            }
+          }}/>
         </Tab.Navigator>
       </NavigationContainer>
 
