@@ -11,6 +11,7 @@ import { Feather } from '@expo/vector-icons';
 import ComponenteStorage from './src/Componentes/ComponenteStorage';
 
 const Tab = createBottomTabNavigator();
+console.log(localStorage)
 export default function App() {
   return (
     <View style={styles.container}>
