@@ -5,6 +5,7 @@ import Sobre from './src/Componentes/Pages/Home/Sobre';
 import { NavigationContainer } from '@react-navigation/native';
 import Storage from './src/Componentes/Pages/Home/Storage';
 import Contato from './src/Componentes/Pages/Home/Contato'
+import CadastroPizzas from "./src/Componentes/Pages/Home/CadastroPizzas"; 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Feather } from '@expo/vector-icons';
@@ -53,7 +54,18 @@ export default function App() {
             tabBarIcon:({color, size}) => {
               return <Feather name="key" color={color} size={size}/>
             }
-          }}/>
+          }}
+          />
+
+          <Tab.Screen
+          name='Cadastro de Pizzas'
+          component={CadastroPizzas}
+          options={{
+            tabBarIcon:({color, size}) => {
+              return <Feather name="plus" color={color} size={size}/>
+            }
+          }}
+          />
         </Tab.Navigator>
       </NavigationContainer>
 
