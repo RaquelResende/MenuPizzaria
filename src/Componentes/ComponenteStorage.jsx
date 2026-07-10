@@ -138,15 +138,29 @@ export default function ComponenteStorage() {
               </TouchableOpacity>
               
             </View>
-            <View>
+            <View style={style. cardUsuario}>
             {usuarios.map((usuario) => (
-              <View key={usuario.id}>
+              <View style={style. usuarioTexto}  key={usuario.id}>
                 <Text> {usuario.nome}</Text>
                 <Text> {usuario.idade}</Text>
                 <Text> {usuario.cidade}</Text>
+               <View style={style.trash}>
+                 <TouchableOpacity  
+                  onPress={() => removerUsuario(usuario.id)}
+                  style={style.botaoExcluirUsuario}
+                 >
+                  <Text style={style.trash} >
+                   <FontAwesome name="trash" size={20} color={"#a80b0b"} />
+                 </Text>
+                </TouchableOpacity>
+
+               </View>
               </View>
             ))}
-          </View> </View>   
+       
+
+          </View> 
+         </View>   
           
         </Modal>
 
@@ -231,6 +245,26 @@ const style = StyleSheet.create({
     top: 10,
     right: 10,
   },
+
+  cardUsuario:{
+    
+    backgroundColor:"#e1e2e9",
+    padding: 20,
+    borderRadius:10,
+    borderWidth:2,
+    borderColor:"#74a2b1",
+  },
+
+  usuarioTexto:{
+     flexDirection:"row",
+     gap:8,
+     
+  },
+
+  trash:{
+   alignSelf:"flex-end",
+  },
+  
 
   modalUsuario: {
     fontSize: 16,
