@@ -4,7 +4,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function ComponentePizzas() {
   const [nome, setNome] = useState("");
-  const [preco, setPreço] = useState("");
+  const [preco, setPreco] = useState("");
   const [imagem, setImagem] = useState("");
   const [pizzas, setPizza] = useState([]);
 
@@ -29,7 +29,7 @@ export default function ComponentePizzas() {
       setPizza(lista);
 
       setNome("");
-      setPreço("");
+      setPreco("");
       setImagem("");
       alert("Cadastro com Sucesso!");
     } catch (error) {
@@ -72,8 +72,26 @@ export default function ComponentePizzas() {
           <Text>Nome:</Text>
           <TextInput style={style.input}
             placeholder="Nome da Pizza"
-            value={nome}
+            value={preco}
             onChangeText={setNome}
+          />
+        </View>
+
+        <View>
+          <Text>Preço:</Text>
+          <TextInput style={style.input}
+            placeholder="Preço da Pizza"
+            value={nome}
+            onChangeText={setPreco}
+          />
+        </View>
+
+        <View>
+          <Text>Imagem:</Text>
+          <TextInput style={style.input}
+            placeholder="Imagem da Pizza"
+            value={nome}
+            onChangeText={setImagem}
           />
         </View>
       </ScrollView>
@@ -98,5 +116,6 @@ const style = StyleSheet.create({
     borderRadius: 5,
     borderWidth: 1,
     borderColor: "#7a7a7a",
+    
   },
 });
